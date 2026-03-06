@@ -14,14 +14,14 @@ export function Navbar() {
     <header className="fixed top-0 inset-x-0 z-50 border-b border-foreground/20 bg-background/80 backdrop-blur-sm shadow-sm">
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
         {/* Logo */}
-        <Link href="/" className="flex items-center">
+        <Link href="/" className="flex flex-row items-center">
           <div className="size-9 overflow-hidden rounded-full shadow-sm hover:shadow-lg transition-all">
             <Image
               src="/logo.png"
               alt="Exor logo"
               width={90}
               height={90}
-              className="h-full w-full object-cover object-center scale-110 hover:brightness-90 transition-all"
+              className="h-full w-full object-cover object-center scale-110 dark:brightness-80 hover:brightness-95 dark:hover:brightness-70 transition-all"
             />
           </div>
         </Link>
