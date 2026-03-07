@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ModeToggle } from "@/components/mode-toggle";
 import { TypographyNav } from "@/components/typography";
 
@@ -11,11 +14,13 @@ const navLinks = [
 ];
 
 export function Navbar() {
+  const pathname = usePathname();
+
   return (
     <header className="fixed top-0 inset-x-0 z-50 border-b border-foreground/20 bg-background/40 backdrop-blur-md shadow-sm">
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
         {/* Logo */}
-        <Link href="/" className="flex flex-row items-center">
+        <Link href="/" className="flex flex-row items-center gap-2.5">
           <div className="size-9 overflow-hidden rounded-full shadow-sm hover:shadow-lg transition-all">
             <Image
               src="/logo.png"
@@ -33,7 +38,11 @@ export function Navbar() {
             <li key={href}>
               <Link
                 href={href}
-                className="relative text-foreground/80 transition-colors hover:text-foreground after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-foreground after:transition-all after:duration-300 hover:after:w-full"
+                className={`relative transition-colors after:absolute after:bottom-0 after:left-0 after:h-px after:bg-foreground after:transition-all after:duration-300 ${
+                  pathname === href
+                    ? "text-foreground after:w-full"
+                    : "text-foreground/80 hover:text-foreground after:w-0 hover:after:w-full"
+                }`}
               >
                 <TypographyNav>{label}</TypographyNav>
               </Link>
