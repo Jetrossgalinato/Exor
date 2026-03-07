@@ -6,11 +6,13 @@ export default function Header() {
   return (
     <section className="flex flex-col items-center justify-center text-center px-4 py-24 gap-6">
       <TypographyH1>
-        <span className="text-foreground">Transforming </span>
-        <span className="text-[var(--accent)]">challenges</span>
+        <span className="text-foreground">Transforming challenges</span>
+
         <br />
         <span className="text-foreground">into </span>
-        <span className="text-[var(--accent)]">innovations</span>
+        <span className="bg-gradient-to-r from-[var(--accent)] to-[var(--chart-4)] bg-clip-text text-transparent">
+          innovations
+        </span>
       </TypographyH1>
 
       <TypographyP>
