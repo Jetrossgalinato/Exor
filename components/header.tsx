@@ -6,7 +6,9 @@ export default function Header() {
   return (
     <section className="flex flex-col items-center justify-center text-center px-4 py-24 gap-6">
       <TypographyH1>
-        <span className="text-foreground">Transforming challenges</span>
+        <span className="text-foreground">
+          Transforming {"today's"} challenges
+        </span>
 
         <br />
         <span className="text-foreground">into </span>
