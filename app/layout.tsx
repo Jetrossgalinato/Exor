@@ -2,6 +2,27 @@ import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
+import localFont from "next/font/local";
+
+const sfDisplay = localFont({
+  src: [
+    {
+      path: "../public/fonts/SFNSDisplay-Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/SFNSDisplay-Semibold.otf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/SFNSDisplay-Bold.otf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+});
 
 export const metadata: Metadata = {
   title: "Exor - Tech Innovations",
@@ -14,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={sfDisplay.className} suppressHydrationWarning>
       <body>
         <ThemeProvider
           attribute="class"
