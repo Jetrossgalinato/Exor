@@ -20,7 +20,7 @@ export default function Header() {
 
       <div className="flex items-center gap-3 mt-2">
         <Button size="lg">Try now</Button>
-        <Button size="lg" variant="outline" className="gap-2">
+        <Button size="lg" variant="ghost" className="gap-2">
           <Play className="size-4 fill-current" />
           See how it works
         </Button>
