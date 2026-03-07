@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ModeToggle } from "@/components/mode-toggle";
+import { TypographyNav } from "@/components/typography";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -32,9 +33,9 @@ export function Navbar() {
             <li key={href}>
               <Link
                 href={href}
-                className="relative text-sm text-foreground/80 transition-colors hover:text-foreground after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-foreground after:transition-all after:duration-300 hover:after:w-full"
+                className="relative text-foreground/80 transition-colors hover:text-foreground after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-foreground after:transition-all after:duration-300 hover:after:w-full"
               >
-                {label}
+                <TypographyNav>{label}</TypographyNav>
               </Link>
             </li>
           ))}

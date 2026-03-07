@@ -74,6 +74,12 @@ export function TypographySmall({ children }: { children: React.ReactNode }) {
   return <small className="text-sm leading-none font-medium">{children}</small>;
 }
 
+export function TypographyNav({ children }: { children: React.ReactNode }) {
+  return (
+    <small className="text-sm leading-none font-semibold">{children}</small>
+  );
+}
+
 export function TypographyMuted({ children }: { children: React.ReactNode }) {
   return <p className="text-sm text-muted-foreground">{children}</p>;
 }
