@@ -4,30 +4,96 @@ import { Play } from "lucide-react";
 
 export default function Header() {
   return (
-    <section className="flex flex-col items-center justify-center text-center px-4 py-24 gap-6">
-      <TypographyH1>
-        <span className="text-foreground">
-          Transforming {"today's"} challenges
-        </span>
+    <section className="flex flex-col items-center text-center px-6 pt-50 pb-40 gap-20 max-w-7xl w-full mx-auto">
+      {/* Hero text */}
+      <div className="flex flex-col items-center gap-6">
+        <TypographyH1>
+          <span className="text-foreground">
+            Transforming {"today's"} challenges
+          </span>
+          <br />
+          <span className="text-foreground">into </span>
+          <span className="bg-gradient-to-r from-[var(--accent)] to-[var(--chart-4)] bg-clip-text text-transparent">
+            innovations
+          </span>
+        </TypographyH1>
 
-        <br />
-        <span className="text-foreground">into </span>
-        <span className="bg-gradient-to-r from-[var(--accent)] to-[var(--chart-4)] bg-clip-text text-transparent">
-          innovations
-        </span>
-      </TypographyH1>
+        <TypographyP>
+          Discover practical technological solutions designed to solve the
+          real-world problems we face every day.
+        </TypographyP>
 
-      <TypographyP>
-        Discover practical technological solutions designed to solve the
-        real-world problems we face every day.
-      </TypographyP>
+        <div className="flex items-center gap-3 mt-2">
+          <Button size="lg">Try now</Button>
+          <Button size="lg" variant="ghost" className="gap-2">
+            <Play className="size-4 fill-current" />
+            See how it works
+          </Button>
+        </div>
+      </div>
 
-      <div className="flex items-center gap-3 mt-2">
-        <Button size="lg">Try now</Button>
-        <Button size="lg" variant="ghost" className="gap-2">
-          <Play className="size-4 fill-current" />
-          See how it works
-        </Button>
+      {/* Hero image card */}
+      <div className="w-full rounded-3xl overflow-hidden border border-border/30 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.35)] ring-1 ring-white/5">
+        <div
+          className="relative w-full aspect-[16/9]"
+          style={{
+            background:
+              "linear-gradient(135deg, oklch(0.12 0.04 262) 0%, oklch(0.17 0.07 255) 40%, oklch(0.13 0.05 275) 100%)",
+          }}
+        >
+          {/* Subtle grid */}
+          <div
+            className="absolute inset-0 opacity-[0.05]"
+            style={{
+              backgroundImage:
+                "linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)",
+              backgroundSize: "64px 64px",
+            }}
+          />
+          {/* Top glow */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_40%_at_50%_0%,oklch(0.55_0.06_242/0.25),transparent)]" />
+          {/* Center accent glow */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_40%_50%_at_50%_50%,oklch(0.83_0.13_74/0.08),transparent)]" />
+          {/* Placeholder label */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <span className="text-[11px] font-mono tracking-[0.35em] uppercase text-white/15 select-none">
+              Image
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* Vision & Mission */}
+      <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-5 text-left">
+        <div className="flex flex-col gap-4 p-8 rounded-2xl border border-border/40 bg-card/40 backdrop-blur-md shadow-md">
+          <span className="text-[10px] font-semibold tracking-[0.25em] uppercase text-muted-foreground">
+            Vision
+          </span>
+          <h3 className="text-lg font-semibold text-foreground leading-snug">
+            A world where technology bridges gaps and drives equal opportunity
+            for all.
+          </h3>
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            We envision a future where innovation is accessible, sustainable,
+            and human-centered — shaping industries and empowering lives at
+            every scale.
+          </p>
+        </div>
+
+        <div className="flex flex-col gap-4 p-8 rounded-2xl border border-border/40 bg-card/40 backdrop-blur-md shadow-md">
+          <span className="text-[10px] font-semibold tracking-[0.25em] uppercase text-muted-foreground">
+            Mission
+          </span>
+          <h3 className="text-lg font-semibold text-foreground leading-snug">
+            To engineer solutions that transform complex challenges into
+            scalable, lasting impact.
+          </h3>
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            We build with purpose — delivering products and systems that are
+            reliable, elegant, and built to endure. Our work starts with deep
+            research, and ends with measurable results.
+          </p>
+        </div>
       </div>
     </section>
   );
