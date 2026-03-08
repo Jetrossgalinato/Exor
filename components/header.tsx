@@ -75,13 +75,11 @@ export default function Header() {
             Vision
           </span>
           <TypographyH3>
-            A world where technology bridges gaps and drives equal opportunity
-            for all.
+            To become a symbol of Filipino technological ingenuity.
           </TypographyH3>
           <TypographyMuted>
-            We envision a future where innovation is accessible, sustainable,
-            and human-centered — shaping industries and empowering lives at
-            every scale.
+            By solving real-world challenges through software solutions in order
+            to empower our community to chart its own path to prosperity.
           </TypographyMuted>
         </div>
 
@@ -90,13 +88,11 @@ export default function Header() {
             Mission
           </span>
           <TypographyH3>
-            To engineer solutions that transform complex challenges into
-            scalable, lasting impact.
+            To develop innovative technology solutions that empower communities.
           </TypographyH3>
           <TypographyMuted>
-            We build with purpose — delivering products and systems that are
-            reliable, elegant, and built to endure. Our work starts with deep
-            research, and ends with measurable results.
+            We provide practical solutions to real-world challenges, working
+            toward a more sustainable and inclusive future for all.
           </TypographyMuted>
         </div>
       </div>
