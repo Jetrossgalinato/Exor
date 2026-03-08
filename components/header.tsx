@@ -1,4 +1,9 @@
-import { TypographyH1, TypographyP } from "@/components/typography";
+import {
+  TypographyH1,
+  TypographyH3,
+  TypographyMuted,
+  TypographyP,
+} from "@/components/typography";
 import { Button } from "@/components/ui/button";
 import { Play } from "lucide-react";
 
@@ -69,30 +74,30 @@ export default function Header() {
           <span className="text-[10px] font-semibold tracking-[0.25em] uppercase text-muted-foreground">
             Vision
           </span>
-          <h3 className="text-lg font-semibold text-foreground leading-snug">
+          <TypographyH3>
             A world where technology bridges gaps and drives equal opportunity
             for all.
-          </h3>
-          <p className="text-sm text-muted-foreground leading-relaxed">
+          </TypographyH3>
+          <TypographyMuted>
             We envision a future where innovation is accessible, sustainable,
             and human-centered — shaping industries and empowering lives at
             every scale.
-          </p>
+          </TypographyMuted>
         </div>
 
         <div className="flex flex-col gap-4 p-8 rounded-2xl border border-border/40 bg-card/40 backdrop-blur-md shadow-md">
           <span className="text-[10px] font-semibold tracking-[0.25em] uppercase text-muted-foreground">
             Mission
           </span>
-          <h3 className="text-lg font-semibold text-foreground leading-snug">
+          <TypographyH3>
             To engineer solutions that transform complex challenges into
             scalable, lasting impact.
-          </h3>
-          <p className="text-sm text-muted-foreground leading-relaxed">
+          </TypographyH3>
+          <TypographyMuted>
             We build with purpose — delivering products and systems that are
             reliable, elegant, and built to endure. Our work starts with deep
             research, and ends with measurable results.
-          </p>
+          </TypographyMuted>
         </div>
       </div>
     </section>
