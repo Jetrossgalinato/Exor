@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   TypographyH1,
   TypographyH3,
@@ -38,39 +39,21 @@ export default function Header() {
       </div>
 
       {/* Hero image card */}
-      <div className="w-full rounded-3xl overflow-hidden border border-border/30 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.35)] ring-1 ring-white/5">
-        <div
-          className="relative w-full aspect-[16/9]"
-          style={{
-            background:
-              "linear-gradient(135deg, oklch(0.12 0.04 262) 0%, oklch(0.17 0.07 255) 40%, oklch(0.13 0.05 275) 100%)",
-          }}
-        >
-          {/* Subtle grid */}
-          <div
-            className="absolute inset-0 opacity-[0.05]"
-            style={{
-              backgroundImage:
-                "linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)",
-              backgroundSize: "64px 64px",
-            }}
+      <div className="w-full rounded-3xl overflow-hidden border border-border/30 shadow-md ring-1 ring-white/5">
+        <div className="relative w-full aspect-[16/9]">
+          <Image
+            src="/images/header1.jpg"
+            alt="Header"
+            fill
+            className="object-cover object-center dark:brightness-80 transition duration-300"
+            priority
           />
-          {/* Top glow */}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_40%_at_50%_0%,oklch(0.55_0.06_242/0.25),transparent)]" />
-          {/* Center accent glow */}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_40%_50%_at_50%_50%,oklch(0.83_0.13_74/0.08),transparent)]" />
-          {/* Placeholder label */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-[11px] font-mono tracking-[0.35em] uppercase text-white/15 select-none">
-              Image
-            </span>
-          </div>
         </div>
       </div>
 
       {/* Vision & Mission */}
       <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-5 text-left">
-        <div className="flex flex-col gap-4 p-8 rounded-2xl border border-border/40 bg-card/40 backdrop-blur-md shadow-md">
+        <div className="flex flex-col gap-4 p-8 rounded-2xl border border-border/40 bg-card backdrop-blur-md shadow-md">
           <span className="text-[10px] font-semibold tracking-[0.25em] uppercase text-muted-foreground">
             Vision
           </span>
@@ -83,7 +66,7 @@ export default function Header() {
           </TypographyMuted>
         </div>
 
-        <div className="flex flex-col gap-4 p-8 rounded-2xl border border-border/40 bg-card/40 backdrop-blur-md shadow-md">
+        <div className="flex flex-col gap-4 p-8 rounded-2xl border border-border/40 bg-card backdrop-blur-md shadow-md">
           <span className="text-[10px] font-semibold tracking-[0.25em] uppercase text-muted-foreground">
             Mission
           </span>
