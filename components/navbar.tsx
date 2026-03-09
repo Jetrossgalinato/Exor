@@ -17,7 +17,7 @@ export function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header className="fixed top-0 inset-x-0 z-50 border-b border-foreground/20 bg-background/60 backdrop-blur-lg shadow-sm">
+    <header className="fixed top-0 inset-x-0 z-50 border-b border-foreground/20 bg-background/80 backdrop-blur-sm shadow-sm">
       <nav className="mx-auto grid h-16 max-w-7xl grid-cols-3 items-center px-6">
         {/* Logo */}
         <Link

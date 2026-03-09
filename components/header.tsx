@@ -53,30 +53,40 @@ export default function Header() {
 
       {/* Vision & Mission */}
       <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-5 text-left">
-        <div className="flex flex-col gap-4 p-8 rounded-2xl border border-border/40 bg-card backdrop-blur-md shadow-md">
-          <span className="text-[10px] font-semibold tracking-[0.25em] uppercase text-muted-foreground">
-            Vision
-          </span>
-          <TypographyH3>
-            To become a symbol of Filipino technological ingenuity.
-          </TypographyH3>
-          <TypographyMuted>
-            By solving real-world challenges through software solutions in order
-            to empower our community to chart its own path to prosperity.
-          </TypographyMuted>
+        <div className="flex flex-col overflow-hidden rounded-2xl border border-border bg-card-near shadow-[0_1px_2px_rgba(0,0,0,0.04),0_4px_8px_rgba(0,0,0,0.06),0_12px_24px_rgba(0,0,0,0.06)]">
+          <div className="px-8 py-5">
+            <span className="text-[10px] font-semibold tracking-[0.25em] uppercase text-muted-foreground">
+              Vision
+            </span>
+          </div>
+          <div className="flex flex-col gap-3 px-8 py-6 bg-card shadow-[inset_0_2px_6px_rgba(0,0,0,0.1),inset_0_1px_2px_rgba(0,0,0,0.08)]">
+            <TypographyH3>
+              To become a symbol of Filipino technological ingenuity.
+            </TypographyH3>
+            <TypographyMuted>
+              By solving real-world challenges through software solutions in
+              order to empower our community to chart its own path to
+              prosperity.
+            </TypographyMuted>
+          </div>
         </div>
 
-        <div className="flex flex-col gap-4 p-8 rounded-2xl border border-border/40 bg-card backdrop-blur-md shadow-md">
-          <span className="text-[10px] font-semibold tracking-[0.25em] uppercase text-muted-foreground">
-            Mission
-          </span>
-          <TypographyH3>
-            To develop innovative technology solutions that empower communities.
-          </TypographyH3>
-          <TypographyMuted>
-            We provide practical solutions to real-world challenges, working
-            toward a more sustainable and inclusive future for all.
-          </TypographyMuted>
+        <div className="flex flex-col overflow-hidden rounded-2xl border border-border bg-card-near shadow-[0_1px_2px_rgba(0,0,0,0.04),0_4px_8px_rgba(0,0,0,0.06),0_12px_24px_rgba(0,0,0,0.06)]">
+          <div className="px-8 py-5">
+            <span className="text-[10px] font-semibold tracking-[0.25em] uppercase text-muted-foreground">
+              Mission
+            </span>
+          </div>
+          <div className="flex flex-col gap-3 px-8 py-6 bg-card shadow-[inset_0_2px_6px_rgba(0,0,0,0.1),inset_0_1px_2px_rgba(0,0,0,0.08)]">
+            <TypographyH3>
+              To develop innovative technology solutions that empower
+              communities.
+            </TypographyH3>
+            <TypographyMuted>
+              We provide practical solutions to real-world challenges, working
+              toward a more sustainable and inclusive future for all.
+            </TypographyMuted>
+          </div>
         </div>
       </div>
     </section>
