@@ -9,7 +9,7 @@ import { Play } from "lucide-react";
 
 export default function Header() {
   return (
-    <section className="flex flex-col items-center text-center px-6 pt-50 pb-40 gap-20 max-w-screen-2xl w-full mx-auto">
+    <section className="flex flex-col items-center text-center px-6 pt-60 pb-40 gap-20 max-w-7xl w-full mx-auto">
       {/* Hero text */}
       <div className="flex flex-col items-center gap-6">
         <TypographyH1>

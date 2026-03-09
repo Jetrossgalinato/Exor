@@ -18,9 +18,12 @@ export function Navbar() {
 
   return (
     <header className="fixed top-0 inset-x-0 z-50 border-b border-foreground/20 bg-background/60 backdrop-blur-lg shadow-sm">
-      <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
+      <nav className="mx-auto grid h-16 max-w-7xl grid-cols-3 items-center px-6">
         {/* Logo */}
-        <Link href="/" className="flex flex-row items-center gap-2.5">
+        <Link
+          href="/"
+          className="flex flex-row items-center gap-2.5 justify-self-start"
+        >
           <div className="size-9 overflow-hidden rounded-full shadow-sm hover:shadow-lg transition-all">
             <Image
               src="/logo.png"
@@ -30,10 +33,13 @@ export function Navbar() {
               className="h-full w-full object-cover object-center scale-110 dark:brightness-80 hover:brightness-95 dark:hover:brightness-70 transition-all"
             />
           </div>
+          <span className="text-lg font-semibold tracking-widest">
+            E<span className="text-accent">X</span>OR
+          </span>
         </Link>
 
         {/* Nav links */}
-        <ul className="flex items-center gap-12">
+        <ul className="flex items-center justify-center gap-12 justify-self-center">
           {navLinks.map(({ label, href }) => (
             <li key={href}>
               <Link
@@ -51,7 +57,9 @@ export function Navbar() {
         </ul>
 
         {/* Mode toggle */}
-        <ModeToggle />
+        <div className="justify-self-end">
+          <ModeToggle />
+        </div>
       </nav>
     </header>
   );
