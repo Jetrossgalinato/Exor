@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-provider";
-import "./globals.css";
+import "@/app/globals.css";
 import { Navbar } from "@/components/navbar";
 import localFont from "next/font/local";
+import { AlertProvider } from "@/components/alert-context";
 
 const sfDisplay = localFont({
   src: [
@@ -36,15 +37,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={sfDisplay.className} suppressHydrationWarning>
-      <body>
+      <body suppressHydrationWarning>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
-          {children}
+          <AlertProvider>
+            <Navbar />
+            {children}
+          </AlertProvider>
         </ThemeProvider>
       </body>
     </html>

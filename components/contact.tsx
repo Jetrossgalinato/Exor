@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/card";
 import { TypographyH2, TypographyP } from "@/components/typography";
 import { Loader2, Mail, MapPin, Phone } from "lucide-react";
+import { useAlert } from "@/components/alert-context";
 
 // Basic Input Component
 const Input = ({
@@ -49,6 +50,7 @@ const Label = ({
 );
 
 export function Contact() {
+  const { showAlert } = useAlert();
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -71,9 +73,15 @@ export function Contact() {
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
     console.log("Form submitted:", formData);
-    setLoading(false);
-    setFormData({ name: "", email: "", message: "" });
-    alert("Message sent successfully!");
+    setTimeout(() => {
+      setLoading(false);
+      setFormData({ name: "", email: "", message: "" });
+      showAlert({
+        title: "Success",
+        description: "Message sent successfully!",
+        variant: "success",
+      });
+    }, 1000);
   };
 
   return (
@@ -160,6 +168,7 @@ export function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     required
+                    className="shadow-[inset_0_2px_4px_rgba(0,0,0,0.1)] focus:shadow-none transition-shadow"
                   />
                 </div>
 
@@ -173,6 +182,7 @@ export function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     required
+                    className="shadow-[inset_0_2px_4px_rgba(0,0,0,0.1)] focus:shadow-none transition-shadow"
                   />
                 </div>
 
@@ -182,7 +192,7 @@ export function Contact() {
                     id="message"
                     name="message"
                     placeholder="Tell us about your project..."
-                    className="min-h-[150px] resize-none"
+                    className="min-h-[150px] resize-none shadow-[inset_0_2px_4px_rgba(0,0,0,0.1)] focus:shadow-none transition-shadow"
                     value={formData.message}
                     onChange={handleChange}
                     required
