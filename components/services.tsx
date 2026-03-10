@@ -1,14 +1,4 @@
-"use client";
-
-import * as React from "react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import { CardImage } from "@/components/card-image";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { TypographyH2, TypographyP } from "@/components/typography";
 import { servicesData } from "@/data/services";
 
@@ -21,50 +11,66 @@ export function Services() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl mx-auto pointer-events-none -z-10">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px]" />
       </div>
-      <Carousel
-        opts={{
-          align: "start",
-          loop: true,
-        }}
-        className="w-full"
-      >
-        <div className="max-w-7xl mx-auto px-6 flex flex-col gap-8">
-          <div className="w-full text-start">
-            <TypographyH2>Services</TypographyH2>
-            <div className="mt-4">
-              <TypographyP>
-                Explore our wide range of services tailored just for you.
-              </TypographyP>
-            </div>
-          </div>
 
-          {/* Carousel content */}
-          <div className="w-full">
-            <CarouselContent className="-ml-6">
-              {servicesData.map((service, index) => (
-                <CarouselItem
-                  key={index}
-                  className="pl-6 basis-[85%] sm:basis-1/2 md:basis-1/2 lg:basis-1/3"
-                >
-                  <div className="p-1 pb-12 h-full">
-                    <CardImage
-                      title={service.title}
-                      description={service.description}
-                      tag={service.tag}
-                      image={service.image}
-                    />
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-          </div>
-
-          <div className="flex justify-end gap-2 w-full -mt-12">
-            <CarouselPrevious className="static translate-y-0" />
-            <CarouselNext className="static translate-y-0" />
+      <div className="max-w-7xl mx-auto px-6 flex flex-col gap-8">
+        <div className="w-full text-start">
+          <TypographyH2>Services</TypographyH2>
+          <div className="mt-4">
+            <TypographyP>
+              Explore our wide range of services tailored just for you.
+            </TypographyP>
           </div>
         </div>
-      </Carousel>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
+          {servicesData.map((service, index) => {
+            const Icon = service.icon;
+            return (
+              <Card
+                key={index}
+                className="group flex flex-col overflow-hidden border border-border/60 bg-card shadow-[0_2px_8px_rgba(0,0,0,0.06),0_8px_24px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.12),0_24px_48px_rgba(0,0,0,0.1)] hover:-translate-y-1 transition-all duration-300"
+              >
+                {/* Top accent gradient line */}
+                <div className="h-[3px] w-full bg-gradient-to-r from-primary/80 via-primary/40 to-transparent" />
+
+                {/* Header: icon + title + tag inline */}
+                <CardHeader className="flex flex-row items-center gap-2.5 pt-3 pb-1.5 px-5">
+                  <div className="flex-shrink-0 w-7 h-7 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary/15 transition-colors duration-300">
+                    <Icon className="w-3.5 h-3.5 text-primary group-hover:scale-110 transition-transform duration-300" />
+                  </div>
+                  <div className="flex flex-col gap-0.5">
+                    <span className="text-[9px] font-semibold tracking-[0.25em] uppercase text-muted-foreground/60 leading-none">
+                      {service.tag}
+                    </span>
+                    <CardTitle className="text-sm leading-snug">
+                      {service.title}
+                    </CardTitle>
+                  </div>
+                </CardHeader>
+
+                <CardContent className="px-5 pb-3 pt-0">
+                  {/* Subtle gradient divider */}
+                  <div className="h-px w-full bg-gradient-to-r from-border/70 to-transparent mb-2" />
+                  <p className="text-xs text-muted-foreground leading-relaxed mb-2">
+                    {service.description}
+                  </p>
+                  {/* Feature tags */}
+                  <div className="flex flex-wrap gap-1">
+                    {service.features.map((feature) => (
+                      <span
+                        key={feature}
+                        className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-primary/8 text-primary/80 border border-primary/15"
+                      >
+                        {feature}
+                      </span>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            );
+          })}
+        </div>
+      </div>
     </section>
   );
 }
