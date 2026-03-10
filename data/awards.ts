@@ -21,9 +21,9 @@ export const awards: Award[] = [
     image: "/images/izone.jpg",
   },
   {
-    title: "15th Runner Up",
+    title: "Top 15",
     description:
-      "Placed 15th Runner Up at the Philippine Startup Challenge: Regional Level, competing among top student-led startups across the region with our innovative tech solution.",
+      "Placed Top 15 at the Philippine Startup Challenge: Regional Level, competing among top student-led startups across the region with our innovative tech solution.",
     tag: "Award",
     image: "/images/15.jpg",
   },
