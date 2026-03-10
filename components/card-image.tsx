@@ -23,7 +23,7 @@ export function CardImage({
 }: CardImageProps) {
   return (
     <Card className="relative group mx-auto w-full h-full pt-0 overflow-hidden transition-all duration-300 hover:shadow-md hover:scale-[1.02] dark:hover:shadow-primary/5 border-border/40">
-      <div className="absolute inset-0 z-30 aspect-video bg-gradient-to-t from-black/80 to-transparent transition-opacity duration-300 opacity-60 group-hover:opacity-40" />
+      <div className="absolute inset-0 z-30 aspect-video bg-gradient-to-t from-black/80 to-transparent transition-all duration-500 opacity-60 group-hover:opacity-40 group-hover:scale-105" />
       <Image
         src={image}
         alt={title}
