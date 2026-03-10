@@ -2,20 +2,8 @@
 
 import Link from "next/link";
 import { useCallback } from "react";
-import { Mail, MapPin, Phone, Github, Linkedin, Twitter } from "lucide-react";
-
-const navLinks = [
-  { label: "Home", href: "/#home" },
-  { label: "Services", href: "/#services" },
-  { label: "About", href: "/#about" },
-  { label: "Contact", href: "/#contact" },
-];
-
-const socialLinks = [
-  { icon: Github, href: "https://github.com", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-  { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-];
+import { Mail, MapPin, Phone } from "lucide-react";
+import { navLinks, socialLinks } from "@/data/navigation";
 
 export function Footer() {
   const handleScrollTo = useCallback(

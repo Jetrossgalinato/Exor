@@ -6,13 +6,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ModeToggle } from "@/components/mode-toggle";
 import { TypographyNav } from "@/components/typography";
-
-const navLinks = [
-  { label: "Home", href: "/#home" },
-  { label: "Services", href: "/#services" },
-  { label: "About", href: "/#about" },
-  { label: "Contact", href: "/#contact" },
-];
+import { navLinks } from "@/data/navigation";
 
 export function Navbar() {
   const pathname = usePathname();
