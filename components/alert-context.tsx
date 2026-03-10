@@ -1,6 +1,12 @@
 "use client";
 
-import React, { createContext, useContext, useState, useCallback } from "react";
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useCallback,
+  useRef,
+} from "react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { AlertCircle, CheckCircle2 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -32,10 +38,14 @@ export function useAlert() {
 export function AlertProvider({ children }: { children: React.ReactNode }) {
   const [alert, setAlert] = useState<AlertData | null>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const hideAlert = useCallback(() => {
     setIsVisible(false);
-    setTimeout(() => setAlert(null), 300); // Wait for transition
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    timeoutRef.current = setTimeout(() => setAlert(null), 500); // Wait for transition
   }, []);
 
   const showAlert = useCallback(
@@ -45,11 +55,16 @@ export function AlertProvider({ children }: { children: React.ReactNode }) {
       variant = "default",
       duration = 3000,
     }: AlertData) => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+
       setAlert({ title, description, variant, duration });
-      setIsVisible(true);
+      // Small delay to allow element to mount in hidden state before sliding in
+      setTimeout(() => setIsVisible(true), 10);
 
       if (duration > 0) {
-        setTimeout(() => {
+        timeoutRef.current = setTimeout(() => {
           hideAlert();
         }, duration);
       }
@@ -63,10 +78,10 @@ export function AlertProvider({ children }: { children: React.ReactNode }) {
       {alert && (
         <div
           className={cn(
-            "fixed top-4 right-4 z-[100] w-full max-w-sm transition-all duration-300 ease-in-out",
+            "fixed top-20 right-4 z-[100] w-full max-w-sm transition-all duration-500 ease-in-out",
             isVisible
-              ? "translate-y-0 opacity-100"
-              : "-translate-y-4 opacity-0 pointer-events-none",
+              ? "translate-x-0 opacity-100"
+              : "translate-x-full opacity-0 pointer-events-none",
           )}
         >
           <Alert variant={alert.variant} className="shadow-lg border-l-4">
