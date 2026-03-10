@@ -1,6 +1,7 @@
 import DarkLightRays from "@/components/dark-light-rays";
 import Header from "@/components/header";
 import { Services } from "@/components/services";
+import { About } from "@/components/about";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <div className="relative z-10 flex flex-col items-center">
         <Header />
         <Services />
+        <About />
       </div>
     </div>
   );

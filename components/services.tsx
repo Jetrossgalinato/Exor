@@ -46,7 +46,7 @@ export function Services() {
   return (
     <section
       id="services"
-      className="w-full pt-8 pb-24 sm:pt-16 sm:pb-32 overflow-hidden relative"
+      className="w-full pt-8 pb-8 sm:pt-16 sm:pb-16 overflow-hidden relative"
     >
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl mx-auto pointer-events-none -z-10">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px]" />
