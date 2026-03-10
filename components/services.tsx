@@ -16,29 +16,29 @@ const servicesData = [
     title: "Custom GIS Development",
     description:
       "Building tailored web and mobile mapping applications that integrate seamlessly with your existing workflows and data infrastructure.",
-    tag: "Software Development",
-    image: "https://avatar.vercel.sh/custom-gis",
+    tag: "Service",
+    image: "/images/gis.jpeg",
   },
   {
     title: "AI Model Training",
     description:
       "Developing and fine-tuning custom machine learning models for specific geospatial tasks like object detection and land cover classification.",
-    tag: "Artificial Intelligence",
-    image: "https://avatar.vercel.sh/ai-models",
+    tag: "Service",
+    image: "/images/ai.jpg",
   },
   {
     title: "Data Engineering & ETL",
     description:
       "Designing robust data pipelines to process, clean, and manage massive geospatial datasets for efficient storage and retrieval.",
-    tag: "Data Ops",
-    image: "https://avatar.vercel.sh/data-engineering",
+    tag: "Service",
+    image: "/images/data.jpg",
   },
   {
     title: "Geospatial Consulting",
     description:
       "Providing expert guidance on GIS architecture, technology stack selection, and digital transformation based on spatial data.",
-    tag: "Consulting",
-    image: "https://avatar.vercel.sh/consulting",
+    tag: "Service",
+    image: "/images/geo.jpg",
   },
 ];
 
