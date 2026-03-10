@@ -18,40 +18,40 @@ import {
 
 const teamMembers = [
   {
-    name: "Alex Rivera",
+    name: "Roman Osorio",
     role: "CEO & Founder",
-    image: "https://avatar.vercel.sh/alex",
-    bio: "Alex is a visionary leader with over 15 years of experience in the tech industry. He founded our company with the mission to solve complex problems through innovative software solutions. Alex is passionate about empowering teams and fostering a culture of continuous learning.",
+    image: "/images/roman.png",
+    bio: "Roman is a visionary leader with over 15 years of experience in the tech industry. He founded our company with the mission to solve complex problems through innovative software solutions. Roman is passionate about empowering teams and fostering a culture of continuous learning.",
   },
   {
-    name: "Sarah Chen",
+    name: "Centmarde Campado",
     role: "CTO",
-    image: "https://avatar.vercel.sh/sarah",
-    bio: "Sarah is a seasoned technologist with a deep understanding of software architecture and cloud computing. She leads our engineering team, ensuring that our products are built on a solid foundation of scalability, security, and performance.",
+    image: "/images/marde.png",
+    bio: "Centmarde leads our technological vision with a focus on innovation and scalability. With deep expertise in cloud infrastructure and software architecture, he ensures our solutions remain at the cutting edge of the industry.",
   },
   {
-    name: "Mike Johnson",
-    role: "Lead Engineer",
-    image: "https://avatar.vercel.sh/mike",
-    bio: "Mike is a highly skilled engineer with a focus on frontend development and user experience. He is responsible for bringing our designs to life and ensuring that our applications are intuitive and responsive across all devices.",
+    name: "Mardz Allyna Lidasan",
+    role: "CFO",
+    image: "/images/mardz.jpg",
+    bio: "Mardz manages the financial strategy and operations of the company. Her expertise in financial planning and risk management ensures sustainable growth and long-term stability for our organization.",
   },
   {
-    name: "Emily Davis",
-    role: "Product Designer",
-    image: "https://avatar.vercel.sh/emily",
-    bio: "Emily is a creative designer with a keen eye for detail and a passion for user-centered design. She works closely with our product team to create intuitive and visually appealing interfaces that delight our users.",
+    name: "Jetross Galinato",
+    role: "Data Analyst",
+    image: "/images/jetross.jpg",
+    bio: "Jetross specializes in turning complex data into actionable insights. He utilizes advanced analytics and visualization tools to help businesses make data-driven decisions and optimize performance.",
   },
   {
-    name: "David Kim",
-    role: "Data Scientist",
-    image: "https://avatar.vercel.sh/david",
-    bio: "David is a data enthusiast with a background in statistics and machine learning. He helps us unlock the value of data by developing advanced algorithms and models that drive insights and inform decision-making.",
+    name: "John Paul Pracullos",
+    role: "Backend Developer",
+    image: "/images/jp.png",
+    bio: "John Paul is an IT student at Caraga State University specializing in backend development, AI, and mobile applications. He builds scalable, high-performance microservices using Java, Python, Spring Boot, and FastAPI.",
   },
   {
-    name: "Jessica Lee",
-    role: "Marketing Lead",
-    image: "https://avatar.vercel.sh/jessica",
-    bio: "Jessica is a strategic marketer with a talent for storytelling and brand building. She leads our marketing efforts, helping us connect with our audience and share our vision with the world.",
+    name: "Prince Niño Antigo",
+    role: "Full-Stack Developer",
+    image: "/images/prince.png",
+    bio: "Prince is a full-stack web developer (BSIT) based in Sibagat, Philippines. He specializes in building applications using React, Next.js, Node.js, Laravel, Bootstrap, PostgreSQL, and Supabase.",
   },
 ];
 
@@ -90,7 +90,7 @@ export function About() {
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white font-medium">
                       Click to learn more
                     </div>
                   </div>
