@@ -1,7 +1,6 @@
 import DarkLightRays from "@/components/dark-light-rays";
 import Header from "@/components/header";
 import { Services } from "@/components/services";
-import { Products } from "@/components/products";
 import { About } from "@/components/about";
 import { Contact } from "@/components/contact";
 import { Footer } from "@/components/footer";
@@ -15,7 +14,6 @@ export default function Home() {
       <div className="relative z-10 flex flex-col items-center">
         <Header />
         <Services />
-        <Products />
         <About />
         <Contact />
         <Footer />
