@@ -13,32 +13,32 @@ import { TypographyH2, TypographyP } from "@/components/typography";
 
 const servicesData = [
   {
-    title: "AI-Powered Geospatial Analysis",
+    title: "Custom GIS Development",
     description:
-      "Unlock hidden patterns in spatial data using advanced machine learning algorithms for predictive modeling and automated feature extraction.",
-    tag: "Featured",
-    image: "https://avatar.vercel.sh/geospatial-ai",
+      "Building tailored web and mobile mapping applications that integrate seamlessly with your existing workflows and data infrastructure.",
+    tag: "Software Development",
+    image: "https://avatar.vercel.sh/custom-gis",
   },
   {
-    title: "Smart Urban Planning",
+    title: "AI Model Training",
     description:
-      "Optimize city infrastructure and resource allocation with data-driven insights derived from comprehensive GIS mapping and demographic analysis.",
-    tag: "Featured",
-    image: "https://avatar.vercel.sh/urban-planning",
+      "Developing and fine-tuning custom machine learning models for specific geospatial tasks like object detection and land cover classification.",
+    tag: "Artificial Intelligence",
+    image: "https://avatar.vercel.sh/ai-models",
   },
   {
-    title: "Remote Sensing & Monitoring",
+    title: "Data Engineering & ETL",
     description:
-      "Monitor environmental changes, vegetation health, and land use in real-time through high-resolution satellite imagery processing.",
-    tag: "Featured",
-    image: "https://avatar.vercel.sh/remote-sensing",
+      "Designing robust data pipelines to process, clean, and manage massive geospatial datasets for efficient storage and retrieval.",
+    tag: "Data Ops",
+    image: "https://avatar.vercel.sh/data-engineering",
   },
   {
-    title: "Location Intelligence for Business",
+    title: "Geospatial Consulting",
     description:
-      "Enhance decision-making with precise location data, helping businesses identify optimal sites and understand market dynamics.",
-    tag: "Featured",
-    image: "https://avatar.vercel.sh/location-intelligence",
+      "Providing expert guidance on GIS architecture, technology stack selection, and digital transformation based on spatial data.",
+    tag: "Consulting",
+    image: "https://avatar.vercel.sh/consulting",
   },
 ];
 
