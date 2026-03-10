@@ -10,7 +10,7 @@ import { TypographyNav } from "@/components/typography";
 const navLinks = [
   { label: "Home", href: "/#home" },
   { label: "Services", href: "/#services" },
-  { label: "About", href: "/about" },
+  { label: "About", href: "/#about" },
   { label: "Contact", href: "/contact" },
 ];
 
