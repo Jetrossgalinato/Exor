@@ -1,5 +1,6 @@
 import DarkLightRays from "@/components/dark-light-rays";
 import Header from "@/components/header";
+import { Services } from "@/components/services";
 
 export default function Home() {
   return (
@@ -7,8 +8,9 @@ export default function Home() {
       <div className="fixed inset-0 pointer-events-none">
         <DarkLightRays />
       </div>
-      <div className="relative z-10 flex justify-center">
+      <div className="relative z-10 flex flex-col items-center">
         <Header />
+        <Services />
       </div>
     </div>
   );
