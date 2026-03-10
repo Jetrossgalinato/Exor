@@ -69,19 +69,30 @@ export function Contact() {
     e.preventDefault();
     setLoading(true);
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
-    console.log("Form submitted:", formData);
-    setTimeout(() => {
-      setLoading(false);
+      if (!res.ok) throw new Error("Failed to send");
+
       setFormData({ name: "", email: "", message: "" });
       showAlert({
         title: "Success",
         description: "Message sent successfully!",
         variant: "success",
       });
-    }, 1000);
+    } catch {
+      showAlert({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
