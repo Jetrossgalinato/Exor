@@ -1,5 +1,16 @@
 import Image from "next/image";
 import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
+import { Button } from "@/components/ui/button";
+import {
   TypographyH2,
   TypographyMuted,
   TypographyP,
@@ -10,31 +21,37 @@ const teamMembers = [
     name: "Alex Rivera",
     role: "CEO & Founder",
     image: "https://avatar.vercel.sh/alex",
+    bio: "Alex is a visionary leader with over 15 years of experience in the tech industry. He founded our company with the mission to solve complex problems through innovative software solutions. Alex is passionate about empowering teams and fostering a culture of continuous learning.",
   },
   {
     name: "Sarah Chen",
     role: "CTO",
     image: "https://avatar.vercel.sh/sarah",
+    bio: "Sarah is a seasoned technologist with a deep understanding of software architecture and cloud computing. She leads our engineering team, ensuring that our products are built on a solid foundation of scalability, security, and performance.",
   },
   {
     name: "Mike Johnson",
     role: "Lead Engineer",
     image: "https://avatar.vercel.sh/mike",
+    bio: "Mike is a highly skilled engineer with a focus on frontend development and user experience. He is responsible for bringing our designs to life and ensuring that our applications are intuitive and responsive across all devices.",
   },
   {
     name: "Emily Davis",
     role: "Product Designer",
     image: "https://avatar.vercel.sh/emily",
+    bio: "Emily is a creative designer with a keen eye for detail and a passion for user-centered design. She works closely with our product team to create intuitive and visually appealing interfaces that delight our users.",
   },
   {
     name: "David Kim",
     role: "Data Scientist",
     image: "https://avatar.vercel.sh/david",
+    bio: "David is a data enthusiast with a background in statistics and machine learning. He helps us unlock the value of data by developing advanced algorithms and models that drive insights and inform decision-making.",
   },
   {
     name: "Jessica Lee",
     role: "Marketing Lead",
     image: "https://avatar.vercel.sh/jessica",
+    bio: "Jessica is a strategic marketer with a talent for storytelling and brand building. She leads our marketing efforts, helping us connect with our audience and share our vision with the world.",
   },
 ];
 
@@ -63,23 +80,68 @@ export function About() {
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-12 sm:gap-12 w-full max-w-5xl justify-items-center mx-auto">
           {teamMembers.map((member, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center text-center gap-4 group w-full"
-            >
-              <div className="relative w-32 h-32 sm:w-40 sm:h-40 overflow-hidden rounded-full border-4 border-background shadow-lg transition-transform duration-300 group-hover:scale-105 ring-1 ring-black/5 dark:ring-white/10">
-                <Image
-                  src={member.image}
-                  alt={member.name}
-                  fill
-                  className="object-cover"
-                />
+            <Drawer key={index}>
+              <div className="flex flex-col items-center text-center gap-4 group w-full">
+                <DrawerTrigger asChild>
+                  <div className="relative w-32 h-32 sm:w-40 sm:h-40 overflow-hidden rounded-full border-4 border-background shadow-lg transition-transform duration-300 group-hover:scale-105 ring-1 ring-black/5 dark:ring-white/10 cursor-pointer">
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      Click to learn more
+                    </div>
+                  </div>
+                </DrawerTrigger>
+
+                <div className="flex flex-col gap-1.5">
+                  <h3 className="font-semibold text-lg">{member.name}</h3>
+                  <TypographyMuted>{member.role}</TypographyMuted>
+                </div>
+
+                <DrawerContent>
+                  <div className="mx-auto w-full max-w-3xl">
+                    <DrawerHeader>
+                      <DrawerTitle>Member Profile</DrawerTitle>
+                      <DrawerDescription>
+                        Get to know our team better.
+                      </DrawerDescription>
+                    </DrawerHeader>
+                    <div className="p-4 pb-0 flex flex-col sm:flex-row items-center sm:items-start gap-6 sm:gap-8">
+                      <div className="relative w-32 h-32 sm:w-48 sm:h-48 shrink-0 overflow-hidden rounded-full border-4 border-background shadow-lg ring-1 ring-black/5 dark:ring-white/10">
+                        <Image
+                          src={member.image}
+                          alt={member.name}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <div className="flex flex-col gap-4 text-center sm:text-left">
+                        <div className="flex flex-col gap-1">
+                          <h3 className="font-bold tracking-tight text-3xl">
+                            {member.name}
+                          </h3>
+                          <p className="text-primary font-medium text-lg">
+                            {member.role}
+                          </p>
+                        </div>
+                        <p className="text-muted-foreground leading-relaxed text-lg">
+                          {member.bio ||
+                            "Passionate about technology and innovation. Dedicated to building solutions that make a real difference."}
+                        </p>
+                      </div>
+                    </div>
+                    <DrawerFooter>
+                      <DrawerClose asChild>
+                        <Button variant="outline">Close</Button>
+                      </DrawerClose>
+                    </DrawerFooter>
+                  </div>
+                </DrawerContent>
               </div>
-              <div className="flex flex-col gap-1.5">
-                <h3 className="font-semibold text-lg">{member.name}</h3>
-                <TypographyMuted>{member.role}</TypographyMuted>
-              </div>
-            </div>
+            </Drawer>
           ))}
         </div>
       </div>
