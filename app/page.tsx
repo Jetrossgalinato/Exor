@@ -2,6 +2,7 @@ import DarkLightRays from "@/components/dark-light-rays";
 import Header from "@/components/header";
 import { Services } from "@/components/services";
 import { About } from "@/components/about";
+import { Contact } from "@/components/contact";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         <Header />
         <Services />
         <About />
+        <Contact />
       </div>
     </div>
   );
