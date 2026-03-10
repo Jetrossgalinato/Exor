@@ -31,22 +31,20 @@ export function Services() {
             </div>
           </div>
 
-          {/* Carousel container that aligns left with content but bleeds right */}
+          {/* Carousel content */}
           <div className="w-full">
-            <div className="w-[100vw]">
-              <CarouselContent className="-ml-6">
-                {Array.from({ length: 9 }).map((_, index) => (
-                  <CarouselItem
-                    key={index}
-                    className="pl-6 basis-[85%] sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5 max-w-sm"
-                  >
-                    <div className="p-1">
-                      <CardImage />
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-            </div>
+            <CarouselContent className="-ml-6">
+              {Array.from({ length: 9 }).map((_, index) => (
+                <CarouselItem
+                  key={index}
+                  className="pl-6 basis-[85%] sm:basis-1/2 md:basis-1/2 lg:basis-1/3"
+                >
+                  <div className="p-1">
+                    <CardImage />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
           </div>
 
           <div className="flex justify-end gap-2 w-full">

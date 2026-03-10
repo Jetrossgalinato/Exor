@@ -10,13 +10,13 @@ import {
 
 export function CardImage() {
   return (
-    <Card className="relative mx-auto w-full max-w-sm pt-0 overflow-hidden">
+    <Card className="relative mx-auto w-full pt-0 overflow-hidden">
       <div className="absolute inset-0 z-30 aspect-video bg-black/35" />
       <Image
         src="https://avatar.vercel.sh/shadcn1"
         alt="Event cover"
-        width={384}
-        height={216}
+        width={600}
+        height={338}
         className="relative z-20 aspect-video w-full object-cover brightness-60 grayscale dark:brightness-40"
       />
       <CardHeader>
