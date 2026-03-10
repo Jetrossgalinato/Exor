@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useCallback } from "react";
 import { Mail, MapPin, Phone, Github, Linkedin, Twitter } from "lucide-react";
 
 const navLinks = [
@@ -15,6 +18,21 @@ const socialLinks = [
 ];
 
 export function Footer() {
+  const handleScrollTo = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string) => {
+      if (href.includes("#")) {
+        e.preventDefault();
+        const targetId = href.split("#")[1];
+        const elem = document.getElementById(targetId);
+        if (elem) {
+          elem.scrollIntoView({ behavior: "smooth" });
+          window.history.pushState({}, "", href);
+        }
+      }
+    },
+    [],
+  );
+
   return (
     <footer className="w-full relative overflow-hidden border-t border-border/50 bg-muted/40">
       {/* Depth layer — subtle inset top shadow */}
@@ -63,6 +81,7 @@ export function Footer() {
                 <li key={label}>
                   <Link
                     href={href}
+                    onClick={(e) => handleScrollTo(e, href)}
                     className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
                   >
                     {label}
