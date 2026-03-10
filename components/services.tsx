@@ -44,7 +44,10 @@ const servicesData = [
 
 export function Services() {
   return (
-    <section className="w-full py-10 overflow-hidden">
+    <section className="w-full pt-8 pb-24 sm:pt-16 sm:pb-32 overflow-hidden relative">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl mx-auto pointer-events-none -z-10">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px]" />
+      </div>
       <Carousel
         opts={{
           align: "start",
@@ -70,7 +73,7 @@ export function Services() {
                   key={index}
                   className="pl-6 basis-[85%] sm:basis-1/2 md:basis-1/2 lg:basis-1/3"
                 >
-                  <div className="p-1 h-full">
+                  <div className="p-1 pb-12 h-full">
                     <CardImage
                       title={service.title}
                       description={service.description}
@@ -83,7 +86,7 @@ export function Services() {
             </CarouselContent>
           </div>
 
-          <div className="flex justify-end gap-2 w-full">
+          <div className="flex justify-end gap-2 w-full -mt-12">
             <CarouselPrevious className="static translate-y-0" />
             <CarouselNext className="static translate-y-0" />
           </div>
