@@ -103,9 +103,9 @@ export function Contact() {
               </div>
               <div>
                 <h3 className="font-semibold mb-1">Email Us</h3>
-                <p className="text-sm text-muted-foreground">hello@exor.com</p>
+                <p className="text-sm text-muted-foreground">exortech.com</p>
                 <p className="text-sm text-muted-foreground">
-                  support@exor.com
+                  support@exortech.com
                 </p>
               </div>
             </div>
@@ -116,9 +116,7 @@ export function Contact() {
               </div>
               <div>
                 <h3 className="font-semibold mb-1">Call Us</h3>
-                <p className="text-sm text-muted-foreground">
-                  +1 (555) 123-4567
-                </p>
+                <p className="text-sm text-muted-foreground">09705872979</p>
                 <p className="text-sm text-muted-foreground">
                   Mon-Fri from 8am to 5pm
                 </p>
@@ -132,9 +130,9 @@ export function Contact() {
               <div>
                 <h3 className="font-semibold mb-1">Visit Us</h3>
                 <p className="text-sm text-muted-foreground">
-                  123 Innovation Drive
+                  Hiraya Bldg. CSU Main Campus
                   <br />
-                  Tech Valley, CA 94043
+                  Ampayon, Butuan City, 8600
                 </p>
               </div>
             </div>
