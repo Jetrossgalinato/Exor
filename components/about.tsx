@@ -21,13 +21,13 @@ const teamMembers = [
     name: "Roman Osorio",
     role: "CEO & Founder",
     image: "/images/roman.png",
-    bio: "Roman is a visionary leader with over 15 years of experience in the tech industry. He founded our company with the mission to solve complex problems through innovative software solutions. Roman is passionate about empowering teams and fostering a culture of continuous learning.",
+    bio: "Roman is a visionary leader with experience in sales and business. He founded our company with the mission to solve complex problems through innovative software solutions. Roman is passionate about empowering teams and fostering a culture of continuous learning.",
   },
   {
     name: "Centmarde Campado",
     role: "CTO",
     image: "/images/marde.png",
-    bio: "Centmarde leads our technological vision with a focus on innovation and scalability. With deep expertise in cloud infrastructure and software architecture, he ensures our solutions remain at the cutting edge of the industry.",
+    bio: "Centmarde leads our technological vision with a focus on innovation and scalability. He has experience in GIS and AI. With deep expertise in cloud infrastructure and software architecture, he ensures our solutions remain at the cutting edge of the industry.",
   },
   {
     name: "Mardz Allyna Lidasan",
