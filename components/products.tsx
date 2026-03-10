@@ -3,8 +3,9 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import {
   Card,
-  CardContent,
+  CardAction,
   CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -12,13 +13,6 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { TypographyH2, TypographyP } from "@/components/typography";
 import { products } from "@/data/products";
-
-const statusStyles: Record<string, string> = {
-  Live: "bg-green-500/10 text-green-600 dark:text-green-400 border-green-500/20",
-  Beta: "bg-yellow-500/10 text-yellow-600 dark:text-yellow-400 border-yellow-500/20",
-  "In Development":
-    "bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20",
-};
 
 export function Products() {
   return (
@@ -37,73 +31,48 @@ export function Products() {
         {products.map((product) => (
           <Card
             key={product.name}
-            className="group relative flex flex-col overflow-hidden border border-border/60 bg-card shadow-[0_1px_2px_rgba(0,0,0,0.04),0_4px_8px_rgba(0,0,0,0.06),0_12px_24px_rgba(0,0,0,0.06)] hover:shadow-[0_4px_16px_rgba(0,0,0,0.1),0_16px_40px_rgba(0,0,0,0.1)] transition-shadow duration-300 gap-0 py-0"
+            className="relative mx-auto w-full pt-0 overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 border border-border/60"
           >
-            {/* Cover image */}
-            <div className="relative w-full h-32 overflow-hidden">
-              {product.image ? (
-                <Image
-                  src={product.image}
-                  alt={product.name}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              ) : (
-                <div className="w-full h-full bg-gradient-to-br from-[var(--accent)]/20 via-[var(--chart-4)]/20 to-[var(--chart-1)]/20 flex items-center justify-center">
-                  <span className="text-4xl font-bold tracking-tight text-foreground/10 select-none">
-                    {product.name}
-                  </span>
-                </div>
-              )}
-              {/* Fade into card body */}
-              <div className="absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-card to-transparent" />
-            </div>
-
-            <CardHeader className="pt-6 pb-3">
-              <div className="flex items-start justify-between gap-3">
-                <div className="flex flex-col gap-1.5">
-                  {/* Status badge */}
-                  <span
-                    className={`inline-flex w-fit items-center rounded-full border px-2.5 py-0.5 text-xs font-medium ${
-                      statusStyles[product.status]
-                    }`}
-                  >
-                    <span className="mr-1.5 inline-block h-1.5 w-1.5 rounded-full bg-current" />
-                    {product.status}
-                  </span>
-                  <CardTitle className="text-xl">{product.name}</CardTitle>
-                </div>
+            <div className="absolute inset-0 z-30 aspect-video" />
+            {product.image ? (
+              <Image
+                src={product.image}
+                alt={product.name}
+                width={600}
+                height={338}
+                className="relative z-20 aspect-video w-full object-contain dark:brightness-80 scale-90"
+              />
+            ) : (
+              <div className="relative z-20 aspect-video w-full bg-gradient-to-br from-[var(--accent)]/20 via-[var(--chart-4)]/20 to-[var(--chart-1)]/20 flex items-center justify-center">
+                <span className="text-4xl font-bold tracking-tight text-foreground/10 select-none">
+                  {product.name}
+                </span>
               </div>
-              <CardDescription className="text-sm leading-relaxed mt-1">
-                {product.description}
-              </CardDescription>
+            )}
+            <CardHeader>
+              <CardAction>
+                <Badge className="bg-green-500/10 text-green-600 dark:text-green-400 border border-green-500/20 gap-1.5">
+                  <span className="inline-block h-1.5 w-1.5 rounded-full bg-green-500" />
+                  {product.status}
+                </Badge>
+              </CardAction>
+              <CardTitle>{product.name}</CardTitle>
+              <CardDescription>{product.description}</CardDescription>
             </CardHeader>
-
-            <CardContent className="flex flex-col gap-4 px-6 pb-6">
-              {/* Tags */}
-              <div className="flex flex-wrap gap-2">
-                {product.tags.map((tag) => (
-                  <Badge key={tag} variant="secondary" className="text-xs">
-                    {tag}
-                  </Badge>
-                ))}
-              </div>
-
-              {/* CTA */}
-              {product.href && (
-                <Button
-                  asChild
-                  variant="outline"
-                  size="sm"
-                  className="w-fit gap-1.5 mt-auto"
-                >
-                  <Link href={product.href}>
-                    Visit BizNest
-                    <ArrowUpRight className="w-3.5 h-3.5" />
+            {product.href && (
+              <CardFooter>
+                <Button asChild className="w-full gap-1.5">
+                  <Link
+                    href={product.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Visit {product.name}
+                    <ArrowUpRight className="w-4 h-4" />
                   </Link>
                 </Button>
-              )}
-            </CardContent>
+              </CardFooter>
+            )}
           </Card>
         ))}
       </div>
