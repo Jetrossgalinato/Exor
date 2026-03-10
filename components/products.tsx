@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import {
@@ -38,8 +39,25 @@ export function Products() {
             key={product.name}
             className="group relative flex flex-col overflow-hidden border border-border/60 bg-card shadow-[0_1px_2px_rgba(0,0,0,0.04),0_4px_8px_rgba(0,0,0,0.06),0_12px_24px_rgba(0,0,0,0.06)] hover:shadow-[0_4px_16px_rgba(0,0,0,0.1),0_16px_40px_rgba(0,0,0,0.1)] transition-shadow duration-300 gap-0 py-0"
           >
-            {/* Top accent bar */}
-            <div className="h-1 w-full bg-gradient-to-r from-[var(--accent)] to-[var(--chart-4)] rounded-t-xl" />
+            {/* Cover image */}
+            <div className="relative w-full h-32 overflow-hidden">
+              {product.image ? (
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              ) : (
+                <div className="w-full h-full bg-gradient-to-br from-[var(--accent)]/20 via-[var(--chart-4)]/20 to-[var(--chart-1)]/20 flex items-center justify-center">
+                  <span className="text-4xl font-bold tracking-tight text-foreground/10 select-none">
+                    {product.name}
+                  </span>
+                </div>
+              )}
+              {/* Fade into card body */}
+              <div className="absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-card to-transparent" />
+            </div>
 
             <CardHeader className="pt-6 pb-3">
               <div className="flex items-start justify-between gap-3">
@@ -57,18 +75,11 @@ export function Products() {
                 </div>
               </div>
               <CardDescription className="text-sm leading-relaxed mt-1">
-                {product.tagline}
+                {product.description}
               </CardDescription>
             </CardHeader>
 
-            <CardContent className="flex flex-col gap-5 px-6 pb-6">
-              {/* Inset description box */}
-              <div className="rounded-lg bg-muted/60 border border-border/40 shadow-[inset_0_2px_4px_rgba(0,0,0,0.04)] px-4 py-3">
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {product.description}
-                </p>
-              </div>
-
+            <CardContent className="flex flex-col gap-4 px-6 pb-6">
               {/* Tags */}
               <div className="flex flex-wrap gap-2">
                 {product.tags.map((tag) => (

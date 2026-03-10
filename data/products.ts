@@ -4,15 +4,18 @@ export interface Product {
   description: string;
   tags: string[];
   status: "Live" | "Beta" | "In Development";
+  image?: string;
   href?: string;
 }
 
 export const products: Product[] = [
   {
     name: "BizNest",
-    tagline: "Your all-in-one business management platform",
+    image: "/images/biznest.jpeg",
+    tagline:
+      "An AI-powered system that helps choose business locations and connects local businesses in your city",
     description:
-      "BizNest is a comprehensive platform designed to help small and medium-sized businesses manage their operations, track performance, and grow with confidence. From inventory and sales to team collaboration and analytics — everything in one place.",
+      "An AI-powered system that helps choose business locations and connects local businesses in your city",
     tags: ["SaaS", "Business", "Analytics"],
     status: "Live",
     href: "https://biznest-gitpush.vercel.app/",
