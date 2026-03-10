@@ -11,6 +11,37 @@ import {
 import { CardImage } from "@/components/card-image";
 import { TypographyH2, TypographyP } from "@/components/typography";
 
+const servicesData = [
+  {
+    title: "AI-Powered Geospatial Analysis",
+    description:
+      "Unlock hidden patterns in spatial data using advanced machine learning algorithms for predictive modeling and automated feature extraction.",
+    tag: "Featured",
+    image: "https://avatar.vercel.sh/geospatial-ai",
+  },
+  {
+    title: "Smart Urban Planning",
+    description:
+      "Optimize city infrastructure and resource allocation with data-driven insights derived from comprehensive GIS mapping and demographic analysis.",
+    tag: "Featured",
+    image: "https://avatar.vercel.sh/urban-planning",
+  },
+  {
+    title: "Remote Sensing & Monitoring",
+    description:
+      "Monitor environmental changes, vegetation health, and land use in real-time through high-resolution satellite imagery processing.",
+    tag: "Featured",
+    image: "https://avatar.vercel.sh/remote-sensing",
+  },
+  {
+    title: "Location Intelligence for Business",
+    description:
+      "Enhance decision-making with precise location data, helping businesses identify optimal sites and understand market dynamics.",
+    tag: "Featured",
+    image: "https://avatar.vercel.sh/location-intelligence",
+  },
+];
+
 export function Services() {
   return (
     <section className="w-full py-10 overflow-hidden">
@@ -34,13 +65,18 @@ export function Services() {
           {/* Carousel content */}
           <div className="w-full">
             <CarouselContent className="-ml-6">
-              {Array.from({ length: 9 }).map((_, index) => (
+              {servicesData.map((service, index) => (
                 <CarouselItem
                   key={index}
                   className="pl-6 basis-[85%] sm:basis-1/2 md:basis-1/2 lg:basis-1/3"
                 >
-                  <div className="p-1">
-                    <CardImage />
+                  <div className="p-1 h-full">
+                    <CardImage
+                      title={service.title}
+                      description={service.description}
+                      tag={service.tag}
+                      image={service.image}
+                    />
                   </div>
                 </CarouselItem>
               ))}

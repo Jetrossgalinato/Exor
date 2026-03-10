@@ -8,26 +8,35 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-export function CardImage() {
+interface CardImageProps {
+  title: string;
+  description: string;
+  tag: string;
+  image?: string;
+}
+
+export function CardImage({
+  title,
+  description,
+  tag,
+  image = "https://avatar.vercel.sh/shadcn1",
+}: CardImageProps) {
   return (
-    <Card className="relative mx-auto w-full pt-0 overflow-hidden">
+    <Card className="relative mx-auto w-full h-full pt-0 overflow-hidden">
       <div className="absolute inset-0 z-30 aspect-video bg-black/35" />
       <Image
-        src="https://avatar.vercel.sh/shadcn1"
-        alt="Event cover"
+        src={image}
+        alt={title}
         width={600}
         height={338}
         className="relative z-20 aspect-video w-full object-cover brightness-60 grayscale dark:brightness-40"
       />
       <CardHeader>
         <CardAction>
-          <Badge variant="secondary">Featured</Badge>
+          <Badge variant="secondary">{tag}</Badge>
         </CardAction>
-        <CardTitle>Design systems meetup</CardTitle>
-        <CardDescription>
-          A practical talk on component APIs, accessibility, and shipping
-          faster.
-        </CardDescription>
+        <CardTitle>{title}</CardTitle>
+        <CardDescription>{description}</CardDescription>
       </CardHeader>
     </Card>
   );
