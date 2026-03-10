@@ -11,20 +11,20 @@ export const awards: Award[] = [
     description:
       "Hack4Smarter Butuan - Elev8PH Startup Challenge 2025: Student Category",
     tag: "Award",
-    image: "/images/header1.jpg",
+    image: "/images/2nd.jpg",
   },
   {
-    title: "Regional Innovation Award",
+    title: "3rd Runner Up",
     description:
       "Awarded for pioneering geospatial technology solutions that address real-world challenges in Mindanao.",
-    tag: "Recognition",
-    image: "/images/gis.jpeg",
+    tag: "Award",
+    image: "/images/izone.jpg",
   },
   {
-    title: "Excellence in AI Development",
+    title: "MVP Presentation",
     description:
-      "Honored for delivering cutting-edge AI-powered applications that drive measurable results for businesses.",
+      "Recognized for delivering a compelling Minimum Viable Product presentation that showcased innovation and business potential.",
     tag: "Recognition",
-    image: "/images/ai.jpg",
+    image: "/images/mvp.jpg",
   },
 ];
