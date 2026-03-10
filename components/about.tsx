@@ -25,7 +25,7 @@ export function About() {
       id="about"
       className="w-full pt-8 pb-24 sm:pt-16 sm:pb-32 relative overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-6 flex flex-col gap-16">
+      <div className="max-w-7xl mx-auto px-6 flex flex-col gap-40">
         {/* Products */}
         <Products />
 

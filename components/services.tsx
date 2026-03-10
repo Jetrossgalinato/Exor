@@ -1,5 +1,11 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { TypographyH2, TypographyP } from "@/components/typography";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import {
+  TypographyH2,
+  TypographyP,
+  TypographyH4,
+  TypographyMuted,
+  TypographySmall,
+} from "@/components/typography";
 import { servicesData } from "@/data/services";
 
 export function Services() {
@@ -34,35 +40,31 @@ export function Services() {
                 <div className="h-[3px] w-full bg-gradient-to-r from-primary/80 via-primary/40 to-transparent" />
 
                 {/* Header: icon + title + tag inline */}
-                <CardHeader className="flex flex-row items-center gap-2.5 pt-3 pb-1.5 px-5">
+                <CardHeader className="flex flex-row items-center gap-2.5 pt-3 px-5">
                   <div className="flex-shrink-0 w-7 h-7 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary/15 transition-colors duration-300">
                     <Icon className="w-3.5 h-3.5 text-primary group-hover:scale-110 transition-transform duration-300" />
                   </div>
                   <div className="flex flex-col gap-0.5">
-                    <span className="text-[9px] font-semibold tracking-[0.25em] uppercase text-muted-foreground/60 leading-none">
+                    <TypographySmall className="tracking-[0.25em] uppercase text-muted-foreground/60">
                       {service.tag}
-                    </span>
-                    <CardTitle className="text-sm leading-snug">
-                      {service.title}
-                    </CardTitle>
+                    </TypographySmall>
+                    <TypographyH4>{service.title}</TypographyH4>
                   </div>
                 </CardHeader>
 
                 <CardContent className="px-5 pb-3 pt-0">
                   {/* Subtle gradient divider */}
                   <div className="h-px w-full bg-gradient-to-r from-border/70 to-transparent mb-2" />
-                  <p className="text-xs text-muted-foreground leading-relaxed mb-2">
-                    {service.description}
-                  </p>
+                  <TypographyMuted>{service.description}</TypographyMuted>
                   {/* Feature tags */}
-                  <div className="flex flex-wrap gap-1">
+                  <div className="flex flex-wrap gap-3 mt-3">
                     {service.features.map((feature) => (
-                      <span
+                      <TypographySmall
                         key={feature}
-                        className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-primary/8 text-primary/80 border border-primary/15"
+                        className="px-2 py-0.5 rounded-full bg-primary/8 text-primary/80 border border-primary/15"
                       >
                         {feature}
-                      </span>
+                      </TypographySmall>
                     ))}
                   </div>
                 </CardContent>
