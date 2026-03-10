@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import {
   TypographyH1,
@@ -6,11 +8,18 @@ import {
   TypographyP,
 } from "@/components/typography";
 import { Button } from "@/components/ui/button";
-import { Play } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function Header() {
+  const scrollTo = (id: string) => {
+    const elem = document.getElementById(id);
+    if (elem) elem.scrollIntoView({ behavior: "smooth" });
+  };
   return (
-    <section className="flex flex-col items-center text-center px-6 pt-60 pb-40 gap-20 max-w-7xl w-full mx-auto">
+    <section
+      id="home"
+      className="flex flex-col items-center text-center px-6 pt-60 pb-8 gap-16 max-w-7xl w-full mx-auto"
+    >
       {/* Hero text */}
       <div className="flex flex-col items-center gap-6">
         <TypographyH1>
@@ -30,10 +39,17 @@ export default function Header() {
         </TypographyP>
 
         <div className="flex items-center gap-3 mt-2">
-          <Button size="lg">Try now</Button>
-          <Button size="lg" variant="ghost" className="gap-2">
-            <Play className="size-4 fill-current" />
-            See how it works
+          <Button size="lg" onClick={() => scrollTo("services")}>
+            Explore Our Services
+          </Button>
+          <Button
+            size="lg"
+            variant="ghost"
+            className="gap-2"
+            onClick={() => scrollTo("about")}
+          >
+            <ArrowRight className="size-4" />
+            About us
           </Button>
         </div>
       </div>

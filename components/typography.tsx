@@ -70,8 +70,20 @@ export function TypographyLarge({ children }: { children: React.ReactNode }) {
   return <div className="text-lg font-semibold">{children}</div>;
 }
 
-export function TypographySmall({ children }: { children: React.ReactNode }) {
-  return <small className="text-sm leading-none font-medium">{children}</small>;
+export function TypographySmall({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <small
+      className={`text-sm leading-none font-medium${className ? ` ${className}` : ""}`}
+    >
+      {children}
+    </small>
+  );
 }
 
 export function TypographyNav({ children }: { children: React.ReactNode }) {
