@@ -21,7 +21,7 @@ export default function Header() {
       className="flex flex-col items-center text-center px-4 pt-36 pb-6 gap-10 md:px-6 md:pt-60 md:pb-8 md:gap-16 max-w-7xl w-full mx-auto"
     >
       {/* Hero text */}
-      <div className="flex flex-col items-center gap-6">
+      <div className="flex flex-col items-center gap-3 md:gap-6">
         <TypographyH1>
           <span className="text-foreground">
             Transforming {"today's"} challenges
@@ -72,40 +72,44 @@ export default function Header() {
       </div>
 
       {/* Vision & Mission */}
-      <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-5 text-left">
+      <div className="w-full grid grid-cols-2 md:grid-cols-2 gap-2.5 md:gap-5 text-left">
         <div className="flex flex-col overflow-hidden rounded-2xl border border-border bg-card-near shadow-[0_1px_2px_rgba(0,0,0,0.04),0_4px_8px_rgba(0,0,0,0.06),0_12px_24px_rgba(0,0,0,0.06)]">
-          <div className="px-5 py-4 md:px-8 md:py-5">
+          <div className="px-3.5 py-3 md:px-8 md:py-5">
             <span className="text-[10px] font-semibold tracking-[0.25em] uppercase text-muted-foreground">
               Vision
             </span>
           </div>
-          <div className="flex flex-col gap-3 px-5 py-5 md:px-8 md:py-6 bg-card shadow-[inset_0_2px_6px_rgba(0,0,0,0.1),inset_0_1px_2px_rgba(0,0,0,0.08)]">
+          <div className="flex flex-col gap-2 md:gap-3 px-3.5 py-3 md:px-8 md:py-6 bg-card shadow-[inset_0_2px_6px_rgba(0,0,0,0.1),inset_0_1px_2px_rgba(0,0,0,0.08)]">
             <TypographyH3>
               To become a symbol of Filipino technological ingenuity.
             </TypographyH3>
-            <TypographyMuted>
-              By solving real-world challenges through software solutions in
-              order to empower our community to chart its own path to
-              prosperity.
-            </TypographyMuted>
+            <div className="hidden sm:block">
+              <TypographyMuted>
+                By solving real-world challenges through software solutions in
+                order to empower our community to chart its own path to
+                prosperity.
+              </TypographyMuted>
+            </div>
           </div>
         </div>
 
         <div className="flex flex-col overflow-hidden rounded-2xl border border-border bg-card-near shadow-[0_1px_2px_rgba(0,0,0,0.04),0_4px_8px_rgba(0,0,0,0.06),0_12px_24px_rgba(0,0,0,0.06)]">
-          <div className="px-5 py-4 md:px-8 md:py-5">
+          <div className="px-3.5 py-3 md:px-8 md:py-5">
             <span className="text-[10px] font-semibold tracking-[0.25em] uppercase text-muted-foreground">
               Mission
             </span>
           </div>
-          <div className="flex flex-col gap-3 px-5 py-5 md:px-8 md:py-6 bg-card shadow-[inset_0_2px_6px_rgba(0,0,0,0.1),inset_0_1px_2px_rgba(0,0,0,0.08)]">
+          <div className="flex flex-col gap-2 md:gap-3 px-3.5 py-3 md:px-8 md:py-6 bg-card shadow-[inset_0_2px_6px_rgba(0,0,0,0.1),inset_0_1px_2px_rgba(0,0,0,0.08)]">
             <TypographyH3>
               To develop innovative technology solutions that empower
               communities.
             </TypographyH3>
-            <TypographyMuted>
-              We provide practical solutions to real-world challenges, working
-              toward a more sustainable and inclusive future for all.
-            </TypographyMuted>
+            <div className="hidden sm:block">
+              <TypographyMuted>
+                We provide practical solutions to real-world challenges, working
+                toward a more sustainable and inclusive future for all.
+              </TypographyMuted>
+            </div>
           </div>
         </div>
       </div>

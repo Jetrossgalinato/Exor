@@ -18,7 +18,7 @@ export function TypographyH2({ children }: { children: React.ReactNode }) {
 
 export function TypographyH3({ children }: { children: React.ReactNode }) {
   return (
-    <h3 className="scroll-m-20 text-xl md:text-2xl font-semibold tracking-tight">
+    <h3 className="scroll-m-20 text-sm sm:text-xl md:text-2xl font-semibold tracking-tight">
       {children}
     </h3>
   );
