@@ -21,10 +21,10 @@ export function Awards() {
       }}
       className="w-full"
     >
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-4 md:gap-8">
         <div className="w-full text-start">
           <TypographyH2>Awards &amp; Trainings</TypographyH2>
-          <div className="mt-4">
+          <div className="mt-2 md:mt-4">
             <TypographyP>
               Milestones and honors that reflect our commitment to excellence
               and innovation.
