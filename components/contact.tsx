@@ -19,7 +19,7 @@ const Input = ({
   ...props
 }: React.InputHTMLAttributes<HTMLInputElement>) => (
   <input
-    className={`flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm shadow-[inset_0_2px_4px_rgba(0,0,0,0.06)] ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 ${className}`}
+    className={`flex h-8 sm:h-10 w-full rounded-md border border-input bg-background px-2.5 sm:px-3 py-1.5 sm:py-2 text-xs sm:text-sm shadow-[inset_0_2px_4px_rgba(0,0,0,0.06)] ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 ${className}`}
     {...props}
   />
 );
@@ -30,7 +30,7 @@ const Textarea = ({
   ...props
 }: React.TextareaHTMLAttributes<HTMLTextAreaElement>) => (
   <textarea
-    className={`flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm shadow-[inset_0_2px_4px_rgba(0,0,0,0.06)] ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 ${className}`}
+    className={`flex min-h-[60px] sm:min-h-[80px] w-full rounded-md border border-input bg-background px-2.5 sm:px-3 py-1.5 sm:py-2 text-xs sm:text-sm shadow-[inset_0_2px_4px_rgba(0,0,0,0.06)] ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 ${className}`}
     {...props}
   />
 );
@@ -42,7 +42,7 @@ const Label = ({
   ...props
 }: React.LabelHTMLAttributes<HTMLLabelElement>) => (
   <label
-    className={`text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 ${className}`}
+    className={`text-xs sm:text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 ${className}`}
     {...props}
   >
     {children}
@@ -98,16 +98,16 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="w-full pt-8 pb-24 sm:pt-16 sm:pb-32 relative overflow-hidden"
+      className="w-full pt-5 pb-12 sm:pt-16 sm:pb-32 relative overflow-hidden"
     >
       {/* Background Gradient Blob */}
       <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] pointer-events-none -z-10" />
       <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-accent/5 rounded-full blur-[80px] pointer-events-none -z-10" />
 
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 items-start">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-16 items-start">
         {/* Left Column: Contact Info */}
-        <div className="flex flex-col gap-8 lg:sticky lg:top-24">
-          <div className="w-full text-start flex flex-col items-start gap-4">
+        <div className="flex flex-col gap-3 lg:sticky lg:top-24">
+          <div className="w-full text-start flex flex-col items-start gap-2 sm:gap-4">
             <TypographyH2>Let&apos;s build something together</TypographyH2>
             <TypographyP>
               Have a project in mind or want to learn more about our services?
@@ -115,43 +115,36 @@ export function Contact() {
             </TypographyP>
           </div>
 
-          <div className="flex flex-col gap-6 mt-4">
-            <div className="flex items-start gap-4 p-4 rounded-lg hover:bg-card-near hover:shadow-md transition-colors">
-              <div className="mt-1 bg-primary/10 p-2 rounded-full text-primary">
-                <Mail className="size-5" />
+          <div className="flex flex-col gap-1 sm:gap-2 mt-1 sm:mt-4">
+            <div className="flex items-center gap-2.5 sm:gap-4 sm:p-3 sm:rounded-lg sm:hover:bg-card-near sm:hover:shadow-md transition-colors">
+              <div className="bg-primary/10 p-1 sm:p-1.5 rounded-full text-primary">
+                <Mail className="size-3 sm:size-4" />
               </div>
               <div>
-                <h3 className="font-semibold mb-1">Email Us</h3>
-                <p className="text-sm text-muted-foreground">exortech.com</p>
-                <p className="text-sm text-muted-foreground">
-                  support@exortech.com
+                <p className="text-xs sm:text-sm text-muted-foreground leading-tight">
+                  exortech.com · support@exortech.com
                 </p>
               </div>
             </div>
 
-            <div className="flex items-start gap-4 p-4 rounded-lg hover:bg-card-near hover:shadow-md transition-colors">
-              <div className="mt-1 bg-primary/10 p-2 rounded-full text-primary">
-                <Phone className="size-5" />
+            <div className="flex items-center gap-2.5 sm:gap-4 sm:p-3 sm:rounded-lg sm:hover:bg-card-near sm:hover:shadow-md transition-colors">
+              <div className="bg-primary/10 p-1 sm:p-1.5 rounded-full text-primary">
+                <Phone className="size-3 sm:size-4" />
               </div>
               <div>
-                <h3 className="font-semibold mb-1">Call Us</h3>
-                <p className="text-sm text-muted-foreground">09705872979</p>
-                <p className="text-sm text-muted-foreground">
-                  Mon-Fri from 8am to 5pm
+                <p className="text-xs sm:text-sm text-muted-foreground leading-tight">
+                  09705872979 · Mon-Fri 8am–5pm
                 </p>
               </div>
             </div>
 
-            <div className="flex items-start gap-4 p-4 rounded-lg hover:bg-card-near hover:shadow-md transition-colors">
-              <div className="mt-1 bg-primary/10 p-2 rounded-full text-primary">
-                <MapPin className="size-5" />
+            <div className="flex items-center gap-2.5 sm:gap-4 sm:p-3 sm:rounded-lg sm:hover:bg-card-near sm:hover:shadow-md transition-colors">
+              <div className="bg-primary/10 p-1 sm:p-1.5 rounded-full text-primary">
+                <MapPin className="size-3 sm:size-4" />
               </div>
               <div>
-                <h3 className="font-semibold mb-1">Visit Us</h3>
-                <p className="text-sm text-muted-foreground">
-                  Hiraya Bldg. CSU Main Campus
-                  <br />
-                  Ampayon, Butuan City, 8600
+                <p className="text-xs sm:text-sm text-muted-foreground leading-tight">
+                  Hiraya Bldg. CSU Main Campus, Ampayon, Butuan City, 8600
                 </p>
               </div>
             </div>
@@ -160,16 +153,21 @@ export function Contact() {
 
         {/* Right Column: Contact Form */}
         <div className="w-full">
-          <Card className="bg-card-near shadow-md hover:shadow-lg transition-shadow border-border/50">
-            <CardHeader>
-              <CardTitle>Send us a message</CardTitle>
-              <CardDescription>
+          <Card className="bg-card-near shadow-md hover:shadow-lg transition-shadow border-border/50 py-0 gap-0 sm:py-6 sm:gap-6">
+            <CardHeader className="px-3 pt-3 pb-1.5 sm:px-6 sm:pt-6 sm:pb-0">
+              <CardTitle className="text-sm sm:text-base">
+                Send us a message
+              </CardTitle>
+              <CardDescription className="text-xs sm:text-sm">
                 Fill out the form below and we&apos;ll get back to you within 24
                 hours.
               </CardDescription>
             </CardHeader>
-            <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6">
+            <CardContent className="px-3 pb-3 sm:px-6 sm:pb-6">
+              <form
+                onSubmit={handleSubmit}
+                className="space-y-2.5 sm:space-y-6"
+              >
                 <div className="space-y-2">
                   <Label htmlFor="name">Name</Label>
                   <Input
@@ -203,14 +201,19 @@ export function Contact() {
                     id="message"
                     name="message"
                     placeholder="Tell us about your project..."
-                    className="min-h-[150px] resize-none shadow-[inset_0_2px_4px_rgba(0,0,0,0.1)] focus:shadow-none transition-shadow"
+                    className="min-h-[80px] sm:min-h-[150px] resize-none shadow-[inset_0_2px_4px_rgba(0,0,0,0.1)] focus:shadow-none transition-shadow"
                     value={formData.message}
                     onChange={handleChange}
                     required
                   />
                 </div>
 
-                <Button type="submit" disabled={loading} className="w-full">
+                <Button
+                  type="submit"
+                  size="sm"
+                  disabled={loading}
+                  className="w-full sm:h-10 sm:text-sm"
+                >
                   {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                   Send Message
                 </Button>

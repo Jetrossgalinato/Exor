@@ -46,7 +46,7 @@ export const awards: Award[] = [
     title: "Code the City: Startup Bootcamp",
     description:
       " Code the City: The Bootcamp for Hack4Smarter Butuan - Kickstarting AI-Powered Innovations for a Smarter City held on July 21-22, 2025 at Grand Palace Hotel, Butuan City",
-    tag: "Award",
+    tag: "Training",
     image: "/images/code.jpg",
   },
 ];
