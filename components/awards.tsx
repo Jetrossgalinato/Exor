@@ -34,11 +34,11 @@ export function Awards() {
 
         {/* Carousel content */}
         <div className="w-full">
-          <CarouselContent className="-ml-6">
+          <CarouselContent className="-ml-3 sm:-ml-6">
             {awards.map((award, index) => (
               <CarouselItem
                 key={index}
-                className="pl-6 basis-[85%] sm:basis-1/2 md:basis-1/2 lg:basis-1/3"
+                className="pl-3 sm:pl-6 basis-[60%] sm:basis-1/2 md:basis-1/2 lg:basis-1/3"
               >
                 <div className="p-1 pb-12 h-full">
                   <CardImage
