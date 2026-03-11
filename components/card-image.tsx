@@ -22,7 +22,7 @@ export function CardImage({
   image = "https://avatar.vercel.sh/shadcn1",
 }: CardImageProps) {
   return (
-    <Card className="relative group mx-auto w-full h-full pt-0 overflow-hidden transition-all duration-300 shadow-md hover:shadow-lg hover:scale-[1.02] dark:hover:shadow-primary/5 border-border/40 py-0 gap-0 sm:py-6 sm:gap-6">
+    <Card className="relative group mx-auto w-full h-full pt-0 overflow-hidden transition-all duration-300 shadow-md hover:shadow-lg hover:scale-[1.02] dark:hover:shadow-primary/5 border-border/40 py-0 gap-0 sm:pt-0 sm:pb-6 sm:gap-6">
       <div className="absolute inset-0 z-30 aspect-video bg-gradient-to-t from-black/80 to-transparent transition-all duration-500 opacity-60 group-hover:opacity-40 group-hover:scale-105" />
       <Image
         src={image}
