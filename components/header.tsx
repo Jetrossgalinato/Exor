@@ -79,7 +79,7 @@ export default function Header() {
               Vision
             </span>
           </div>
-          <div className="flex flex-col gap-2 md:gap-3 px-3.5 py-3 md:px-8 md:py-6 bg-card shadow-[inset_0_2px_6px_rgba(0,0,0,0.1),inset_0_1px_2px_rgba(0,0,0,0.08)]">
+          <div className="flex-1 flex flex-col gap-2 md:gap-3 px-3.5 py-3 md:px-8 md:py-6 bg-card shadow-[inset_0_2px_6px_rgba(0,0,0,0.1),inset_0_1px_2px_rgba(0,0,0,0.08)]">
             <TypographyH3>
               To become a symbol of Filipino technological ingenuity.
             </TypographyH3>
@@ -99,7 +99,7 @@ export default function Header() {
               Mission
             </span>
           </div>
-          <div className="flex flex-col gap-2 md:gap-3 px-3.5 py-3 md:px-8 md:py-6 bg-card shadow-[inset_0_2px_6px_rgba(0,0,0,0.1),inset_0_1px_2px_rgba(0,0,0,0.08)]">
+          <div className="flex-1 flex flex-col gap-2 md:gap-3 px-3.5 py-3 md:px-8 md:py-6 bg-card shadow-[inset_0_2px_6px_rgba(0,0,0,0.1),inset_0_1px_2px_rgba(0,0,0,0.08)]">
             <TypographyH3>
               To develop innovative technology solutions that empower
               communities.
